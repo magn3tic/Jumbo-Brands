@@ -29,17 +29,15 @@
                 {{ image_url | image_url: width: 2000 }} 2000w,
                 {{ image_url | image_url: width: 3000 }} 3000w,
                 {{ image_url | image_url: width: 3840 }} 3840w"
-              {% unless section.settings.show_hero and is_first_block %}
-                {% if settings.enable_lazy_loading_image %}
-                  loading="lazy"
-                {% else %}
-                  loading="eager"
-                {% endif %}
-              {% else %}
+              {% if is_first_block %}
                 loading="eager"
                 fetchpriority="high"
                 decoding="sync"
-              {% endunless %}
+              {% elsif settings.enable_lazy_loading_image %}
+                loading="lazy"
+              {% else %}
+                loading="eager"
+              {% endif %}
               sizes="100vw"
               src="{{ image_url | image_url: width: 3840 }}"
               alt="{{ image_url.alt | escape }}"

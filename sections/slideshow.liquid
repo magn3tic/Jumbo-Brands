@@ -755,17 +755,15 @@
                                 {{ block.settings.image | image_url: width: 1300 }} 2000w,
                                 {{ block.settings.image | image_url: width: 1900 }} 3000w,
                                 {{ block.settings.image | image_url: width: 2400 }} 3840w"
-                              {% unless section.settings.show_hero and forloop.first %}
-                                {% if settings.enable_lazy_loading_image %}
-                                  loading="lazy"
-                                {% else %}
-                                  loading="eager"
-                                {% endif %}
-                              {% else %}
+                              {% if forloop.first %}
                                 loading="eager"
                                 fetchpriority="high"
                                 decoding="sync"
-                              {% endunless %}
+                              {% elsif settings.enable_lazy_loading_image %}
+                                loading="lazy"
+                              {% else %}
+                                loading="eager"
+                              {% endif %}
                               sizes="100vw"
                               src="{{ block.settings.image | image_url: width: 3840 }}"
                               alt="{{ block.settings.image.alt | escape }}"
@@ -791,17 +789,15 @@
                         src="{{ block.settings.image_mobile | image_url: width: 750 }}"
                         alt="{{ block.settings.image_mobile.alt | escape }}"
                         class="object-cover h-full w-full{% if block.settings.image_mobile != blank %} md:hidden{% endif %}"
-                        {% unless section.settings.show_hero and forloop.first %}
-                          {% if settings.enable_lazy_loading_image %}
-                            loading="lazy"
-                          {% else %}
-                            loading="eager"
-                          {% endif %}
-                        {% else %}
+                        {% if forloop.first %}
                           loading="eager"
                           fetchpriority="high"
                           decoding="sync"
-                        {% endunless %}
+                        {% elsif settings.enable_lazy_loading_image %}
+                          loading="lazy"
+                        {% else %}
+                          loading="eager"
+                        {% endif %}
                         width="{{ block.settings.image_mobile.width }}"
                         height="{{ block.settings.image_mobile.height }}"
                         style="object-position: {{ block.settings.image_mobile.presentation.focal_point }}"
@@ -1252,7 +1248,7 @@
         {
           "type": "video_url",
           "id": "video_url",
-          "accept": [
+          "accepts": [
             "youtube",
             "vimeo"
           ],
@@ -1294,7 +1290,7 @@
         {
           "type": "video_url",
           "id": "mobile_video_url",
-          "accept": [
+          "accepts": [
             "youtube",
             "vimeo"
           ],
