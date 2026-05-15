@@ -92,12 +92,6 @@
     {%- unless settings.type_body_font?.system -%}
       <link rel="preload" href="{{ settings.type_body_font | font_url }}" as="font" type="font/woff2" crossorigin="anonymous" />
     {%- endunless -%}
-    {%- unless settings.type_header_font?.system -%}
-      <link rel="preload" href="{{ settings.type_header_font | font_url }}" as="font" type="font/woff2" crossorigin="anonymous" />
-    {%- endunless -%}
-    {%- unless settings.type_menu_font?.system -%}
-      <link rel="preload" href="{{ settings.type_menu_font | font_url }}" as="font" type="font/woff2" crossorigin="anonymous" />
-    {%- endunless -%}
     {% # theme-check-enable AssetPreload %}
     {% liquid 
       render 'meta-tags'
@@ -284,9 +278,7 @@
         <script src="{{ 'cart-countdown-timer.js' | asset_url }}" defer></script>
       {%- endif -%}
       <script src="{{ 'theme.js' | asset_url }}" defer></script>
-      {%- unless template.name == 'page' or template.name == 'article' or template.name == 'blog' or template.name == 'password' -%}
-        <script src="{{ 'variant-select-card.js' | asset_url }}" defer></script>
-      {%- endunless -%}
+      <script src="{{ 'variant-select-card.js' | asset_url }}" defer></script>
       <script src="{{ 'vendors.js' | asset_url }}" defer></script>
       <script>
         window.addEventListener("load", (event) => {
