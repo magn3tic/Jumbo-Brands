@@ -703,12 +703,12 @@
                   {%- endif -%}
                 }
               {%- endstyle -%}
-              {% if section.settings.show_hero and forloop.first %}
+              {% if forloop.first %}
                 <div class="hidden">
                   {%- if block.settings.image_mobile != blank -%}
-                    {{ image_url_mobile | image_url: width: 1500 | image_tag: widths: '375, 450, 750, 900, 1100, 1500', preload: true, loading: 'lazy' }}
+                    {{ image_url_mobile | image_url: width: 1500 | image_tag: widths: '375, 450, 750, 900, 1100, 1500', preload: true, loading: 'eager' }}
                   {%- endif -%}
-                  {{ block.settings.image | image_url: width: 3840 | image_tag: widths: '750, 450, 550, 750, 890, 1000, 1500, 1920', preload: true, loading: 'lazy' }}
+                  {{ block.settings.image | image_url: width: 3840 | image_tag: widths: '750, 450, 550, 750, 890, 1000, 1500, 1920', preload: true, loading: 'eager' }}
                 </div>
               {% endif %}
               <div x-slide-index="{{ forloop.index | minus: 1 }}" 
