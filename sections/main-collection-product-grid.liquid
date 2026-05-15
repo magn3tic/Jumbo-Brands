@@ -95,6 +95,7 @@
         if number_products != blank and param != blank and number_products contains param
           assign products_per_page = param
         endif
+        assign products_per_page = products_per_page | at_most: 48
 
         assign disable_quickview = true
         if section.settings.show_quickview
@@ -919,7 +920,7 @@
         {
           "type": "video_url",
           "id": "video_url",
-          "accept": [
+          "accepts": [
             "youtube",
             "vimeo"
           ],

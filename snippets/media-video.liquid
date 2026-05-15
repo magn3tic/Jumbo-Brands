@@ -56,7 +56,7 @@
     {% endcapture %}
     <div class="min-h-[1px]">
       {% if video_looping %}
-        {{ video | video_tag: autoplay: true, muted: true, playsinline: true, preload: 'auto', loading: loading, class: class_video, poster: '', controls: false, onloadeddata: onload | replace: '<img ', replace_tag_img_loading }}
+        {{ video | video_tag: autoplay: true, muted: true, playsinline: true, preload: 'metadata', loading: loading, class: class_video, poster: '', controls: false, onloadeddata: onload | replace: '<img ', replace_tag_img_loading }}
       {% elsif is_social_feeds_popup_video %}
         {{ video | video_tag: autoplay: enable_video_autoplay, loop: true, loading: loading, class: class_video, poster: '', controls: true, onloadeddata: onload | replace: '<img ', replace_tag_img_loading }}
       {% else %}

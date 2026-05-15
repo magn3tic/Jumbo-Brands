@@ -20,6 +20,7 @@
   if number_post != blank and param != blank and number_post contains param
     assign post_per_page = param
   endif
+  assign post_per_page = post_per_page | at_most: 48
   assign sub_heading =  settings.heading_base_size | times: 0.0137 
   if section.settings.columns_desktop == 3 
     assign sub_heading =  settings.heading_base_size | times: 0.01125
