@@ -1,0 +1,33 @@
+{%- style -%}
+  {{ settings.type_header_font | font_face: font_display: 'swap' }}
+  {{ settings.type_body_font | font_face: font_display: 'swap' }}
+  {{ settings.type_menu_font | font_face: font_display: 'swap' }}
+  {{ settings.type_button_font | font_face: font_display: 'swap' }}
+  {{ settings.heading_highlight_font | font_face: font_display: 'swap' }}
+
+  {{ settings.type_body_font | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' }}
+  {{ settings.type_body_font | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
+  {{ settings.type_body_font | font_modify: 'weight', 'bold' | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
+{%- endstyle -%}
+
+
+  <style>
+    @font-face {
+      font-family: 'Andes';
+      src: url('https://cdn.shopify.com/s/files/1/0949/0143/6716/files/Andes_Bold.otf?v=1774347053') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Andes';
+      src: url('https://cdn.shopify.com/s/files/1/0949/0143/6716/files/Andes_Regular.otf?v=1774349440') format('opentype');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+
+  
+
