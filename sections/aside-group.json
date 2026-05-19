@@ -121,55 +121,13 @@
             "text_color_dark": "#ffffff",
             "border_color_dark": "rgba(0,0,0,0)"
           }
-        },
-        "text_label_bJVLqD": {
-          "type": "text-label",
-          "disabled": true,
-          "settings": {
-            "show_on_product_card": true,
-            "show_on_product_page": true,
-            "applied_products": [],
-            "applied_collections": [],
-            "icon": "none",
-            "another_icon": "",
-            "custom_icon": "",
-            "content": "Hot",
-            "display_type": "rounded-full",
-            "opacity": 100,
-            "font_size": 90,
-            "font_size_mobile": 90,
-            "size": 1,
-            "size_mobile": 2,
-            "position": "top-left",
-            "horizontal_position": 5,
-            "vertical_position": 5,
-            "background_color": "#d68641",
-            "text_color": "#ffffff",
-            "border_color": "rgba(0,0,0,0)",
-            "background_color_dark": "#d68641",
-            "text_color_dark": "#ffffff",
-            "border_color_dark": "rgba(0,0,0,0)",
-            "schedule_enabled": false,
-            "timezone": "-4",
-            "start_year": 2023,
-            "start_month": "1",
-            "start_day": "1",
-            "start_hour": "0",
-            "start_minute": "0",
-            "end_year": 2023,
-            "end_month": "1",
-            "end_day": "1",
-            "end_hour": "0",
-            "end_minute": "0"
-          }
         }
       },
       "block_order": [
         "sale_label_YqELf9",
         "preorder_label_RyRWVh",
         "new_label_yeVmFm",
-        "sold_out_label_748YYq",
-        "text_label_bJVLqD"
+        "sold_out_label_748YYq"
       ],
       "settings": {
         "enable": true
