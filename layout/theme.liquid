@@ -17,13 +17,9 @@
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
     
-    {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
-      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-    {%- endunless -%}
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
     <title>
       {{ page_title }}
@@ -107,6 +103,12 @@
       {{ 'page.css' | asset_url | stylesheet_tag: preload: true }}
     {% endif %}
     {{ content_for_header }}
+    <script>
+    // Delay non-critical Shopify scripts
+    document.addEventListener('DOMContentLoaded', function() {
+      var observer = new IntersectionObserver(function() {});
+    });
+  </script>
     {{ settings.additional_head }}
 
     {% liquid
