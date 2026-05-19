@@ -286,11 +286,13 @@
       <script src="{{ 'theme.js' | asset_url }}" defer></script>
       <script src="{{ 'variant-select-card.js' | asset_url }}" defer></script>
       <script src="{{ 'vendors.js' | asset_url }}" defer></script>
+
       <script>
-        window.addEventListener("load", (event) => {
-          deferScriptLoad('instant.page', '{{ 'instant.page.v5.1.1.js' | asset_url }}', () => {}, true);
-        });
-      </script>
+      setTimeout(function() {
+        deferScriptLoad('instant.page', '{{ 'instant.page.v5.1.1.js' | asset_url }}', () => {}, true);
+      }, 3000);
+    </script>
+
     </div>
   </body>
 </html>
