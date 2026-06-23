@@ -104,7 +104,7 @@
         "filter_type": "aside",
         "default_hide_filtering": false,
         "expand_filter": false,
-        "sticky_filtering": false,
+        "sticky_filtering": true,
         "filter_edge_style": "adapt",
         "enable_collection_count": false,
         "enable_sorting": true,
